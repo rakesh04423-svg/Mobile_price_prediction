@@ -2,10 +2,14 @@ import streamlit as st
 import numpy as np
 import pickle
 import joblib
+from sklearn.preprocessing import PowerTransformer
 
-# Load your trained model (make sure you saved it as a .pkl file)
-# Example: pickle.dump(model, open("model.pkl", "wb"))
-model = joblib.load("cellphone_price_prediction_model.pkl")
+
+
+#Load model and transformer
+model = joblib.load("ML\Mobile_price_prediction\cellphone_price_prediction_model.pkl")
+pt = joblib.load("ML\Mobile_price_prediction\pt.pkl")
+
 
 
 st.title("📱 Mobile Price Prediction App")
@@ -28,6 +32,10 @@ thickness = st.number_input("Thickness (mm)", min_value=0.0, step=0.1)
 
 features = np.array([[sale, weight, resolution, ppi, cpu_core, cpu_freq,
                       internal_mem, ram, rear_cam, front_cam, battery, thickness]])
+
+features = pt.transform(features)
+
+
 
 # Prediction button
 if st.button("Predict Price"):
