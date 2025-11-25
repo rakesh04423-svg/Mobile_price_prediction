@@ -1,0 +1,15 @@
+ipykernel
+numpy
+pandas
+matplotlib
+scikit-learn
+seaborn
+scipy
+missingno
+plotly
+statsmodels
+xgboost
+catboost
+lightgbm
+joblib
+streamlit
