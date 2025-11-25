@@ -7,8 +7,8 @@ from sklearn.preprocessing import PowerTransformer
 
 
 #Load model and transformer
-model = joblib.load("ML\Mobile_price_prediction\cellphone_price_prediction_model.pkl")
-pt = joblib.load("ML\Mobile_price_prediction\pt.pkl")
+model = joblib.load("cellphone_price_prediction_model.pkl")
+pt = joblib.load("pt.pkl")
 
 
 
